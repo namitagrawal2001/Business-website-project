@@ -1,0 +1,132 @@
+Project Report
+DevOps Project: Multi-Page Business Website Deployment on AWS EC2
+
+Overview
+This project covers building a static multi-page business website and deploying it on an AWS EC2 Ubuntu server using Git, Linux and Nginx. The goal was to learn a real DevOps workflow including GitHub to EC2 deployment, server setup and debugging.
+
+Website Pages
+• Home
+• About
+• Services
+• Contact
+• Portfolio
+
+GitHub Repository
+• Repository Name: Business-website-project
+• Repository ID: Business-website-project
+• Repository Link: [https://github.com/namitagrawal2001/Business-website-project](https://github.com/namitagrawal2001/Business-website-project)
+. Public IP: 3.108.26.234
+. Elastic IP addresses: 3.108.26.234
+
+
+Tech Used
+• HTML
+• CSS
+• Git and GitHub
+• Linux (Ubuntu 22.04)
+• Nginx
+• AWS EC2
+
+Step-by-Step Process
+
+1. Built the website locally using VS Code.
+2. Created a GitHub repository named business-website-project.
+3. Pushed all website files to GitHub.
+4. Launched an EC2 instance (Ubuntu 22.04, t2.micro).
+5. Connected to the server using SSH.
+6. Installed Nginx on EC2 and started the service.
+7. Installed Git on the server.
+8. Cloned the website repository from GitHub.
+9. Removed default Nginx files from /var/www/html.
+10. Moved project files into the Nginx root directory.
+11. Restarted Nginx to load the website.
+12. Tested the website with the Elastic IP.
+
+Errors Faced
+• Wrong file path while moving files.
+• CSS not loading due to directory structure issues.
+• Permission issues in /var/www/html.
+
+How I Solved Them
+• Used correct mv commands.
+• Fixed asset and image paths.
+• Applied correct permissions using chmod and chown.
+• Restarted Nginx every time.
+
+Final Output
+• Fully working multi-page business website.
+• Hosted on AWS EC2 with Elastic IP.
+• Nginx serving all pages.
+• Complete Git to EC2 workflow implemented.
+
+Screenshots Included
+• EC2 Dashboard
+• Elastic IP
+• SSH Terminal
+• Git Clone
+• Nginx Status
+• Live Website
+All Command here to run
+Commands Used in the Project
+
+Local System (VS Code)
+
+1. Initialize Git
+   git init
+
+2. Add files
+   git add .
+
+3. Commit files
+   git commit -m "Initial commit"
+
+4. Connect to GitHub
+   git remote add origin [https://github.com/namitagrawal2001/Business-website-project.git](https://github.com/namitagrawal2001/Business-website-project.git)
+
+5. Push to GitHub
+   git branch -M main
+   git push -u origin main
+
+EC2 Server Commands
+
+1. SSH into EC2
+   chmod 400 key.pem
+   ssh -i key.pem ubuntu@<elastic-ip>
+
+2. Update packages
+   sudo apt update
+   sudo apt upgrade -y
+
+3. Install Nginx
+   sudo apt install nginx -y
+   sudo systemctl status nginx
+
+4. Install Git
+   sudo apt install git -y
+
+5. Clone repository
+   git clone [https://github.com/namitagrawal2001/Business-website-project.git](https://github.com/namitagrawal2001/Business-website-project.git)
+
+6. Remove default Nginx files
+   sudo rm -rf /var/www/html/*
+
+7. Move project files to Nginx root
+   cd Business-website-project
+   sudo mv * /var/www/html/
+
+8. Set permissions
+   sudo chmod -R 755 /var/www/html
+   sudo chown -R www-data:www-data /var/www/html
+
+9. Restart Nginx
+   sudo systemctl restart nginx
+
+Checks and Debugging
+
+1. Check Nginx status
+   sudo systemctl status nginx
+
+2. Check directory
+   ls
+   ls /var/www/html
+
