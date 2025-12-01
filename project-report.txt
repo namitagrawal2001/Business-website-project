@@ -15,8 +15,8 @@ GitHub Repository
 • Repository Name: Business-website-project
 • Repository ID: Business-website-project
 • Repository Link: [https://github.com/namitagrawal2001/Business-website-project](https://github.com/namitagrawal2001/Business-website-project)
-. Public IP: 3.108.26.234
-. Elastic IP addresses: 3.108.26.234
+. Public IP: 13.127.163.6
+. Elastic IP addresses: 13.127.163.6
 
 
 Tech Used
